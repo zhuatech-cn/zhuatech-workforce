@@ -1,0 +1,47 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "REVIEW",
+      "regularHours": "#40",
+      "overtimeHours": "#4",
+      "remainingCompOff": "#4",
+      "candidatePay": "#2300"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "attendanceHours": "40",
+      "compOffHours": "0"
+    },
+    "expected": {
+      "decision": "PASS",
+      "candidatePay": "#2000"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "compOffHours": "9"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "attendanceHours": "3"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "hourlyRate": "0"
+    },
+    "expected": {
+      "candidatePay": "#0"
+    },
+    "error": false
+  }
+]
